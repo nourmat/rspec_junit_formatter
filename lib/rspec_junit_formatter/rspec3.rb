@@ -87,6 +87,10 @@ private
     strip_diff_colors(exception_for(example).to_s)
   end
 
+  def failure_line_number_for(notification)
+    notification.example.metadata[:line_number].to_s
+  end
+
   def failure_for(notification)
     strip_diff_colors(notification.message_lines.join("\n")) << "\n" << notification.formatted_backtrace.join("\n")
   end

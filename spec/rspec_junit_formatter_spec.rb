@@ -116,6 +116,7 @@ describe RspecJunitFormatter do
       child = testcase.element_children.first
       expect(child.name).to eql("failure")
       expect(child["message"]).not_to be_empty
+      expect(child["line_number"].to_i.class).to be(Integer)
       expect(child.text.strip).not_to be_empty
       expect(child.text.strip).not_to match(/\\e\[(?:\d+;?)+m/)
     end

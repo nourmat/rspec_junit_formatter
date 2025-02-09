@@ -59,6 +59,7 @@ private
       output << %{<failure}
       output << %{ message="#{escape(failure_message_for(example))}"}
       output << %{ type="#{escape(failure_type_for(example))}"}
+      output << %{ line_number="#{escape(failure_line_number_for(example))}"}
       output << %{>}
       output << escape(failure_for(example))
       output << %{</failure>}

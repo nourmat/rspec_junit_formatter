@@ -52,6 +52,10 @@ private
     strip_diff_colors(exception_for(example).to_s)
   end
 
+  def failure_line_number_for(example)
+    example.metadata[:line_number]
+  end
+
   def failure_for(example)
     exception = exception_for(example)
     message   = strip_diff_colors(exception.message)
